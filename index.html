@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فرم قرارداد خدمات - سرزمین کدها</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <style>
+        :root {
+            --primary-color: #5700C9;
+            --secondary-color: #EAECF0;
+            --accent-color: #E10454;
+        }
+        
+        body {
+            font-family: Vazirmatn, 'Segoe UI', Tahoma, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .logo-container {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--primary-color), #3a0085);
+            border-radius: 10px;
+            color: white;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .contract-form {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 15px;
+        }
+        
+        .service-category {
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-right: 4px solid var(--primary-color);
+        }
+        
+        .category-title {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .form-check {
+            margin-bottom: 15px;
+            padding-right: 35px;
+        }
+        
+        .form-check-input {
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+        }
+        
+        .form-check-input:checked {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .form-check-label {
+            font-weight: 500;
+        }
+        
+        .price-badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            float: left;
+        }
+        
+        .total-price {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .form-tabs {
+            margin-bottom: 30px;
+        }
+        
+        .nav-link {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .nav-link.active {
+            background-color: var(--primary-color) !important;
+            color: white !important;
+            font-weight: bold;
+        }
+        
+        .signature-area {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px dashed #ccc;
+        }
+        
+        .disclaimer {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .delivery-option {
+            background-color: #fff6f9;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .signature-box {
+            border: 2px dashed var(--primary-color);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            background-color: var(--secondary-color);
+        }
+        
+        .company-info {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .contract-form {
+                padding: 20px;
+            }
+            
+            .price-badge {
+                float: none;
+                display: inline-block;
+                margin-top: 5px;
+            }
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #4500a3;
+            border-color: #4500a3;
+        }
+        
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #printSection, #printSection * {
+                visibility: visible;
+            }
+            #printSection {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .print-title {
+                font-size: 24px;
+                text-align: center;
+                margin-bottom: 30px;
+                color: var(--primary-color);
+                font-weight: bold;
+            }
+        }
+        
+        .github-info {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-5 no-print">
+        <div class="logo-container">
+            <div class="logo"><i class="fas fa-code"></i> سرزمین کدها</div>
+            <p>ارائه دهنده خدمات تخصصی طراحی وبسایت و اپلیکیشن</p>
+        </div>
+        
+        <div class="github-info">
+            <h4>این پروژه برای GitHub Pages طراحی شده است</h4>
+            <p>GitHub Pages یک سرویس میزبانی رایگان و دائمی است که منقضی نمی‌شود</p>
+            <p>برای استفاده، کد این صفحه را در یک فایل index.html ذخیره کرده و در ریپازیتوری GitHub خود آپلود کنید</p>
+        </div>
+        
+        <ul class="nav nav-pills form-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="website-tab" data-bs-toggle="tab" data-bs-target="#website" type="button" role="tab" aria-controls="website" aria-selected="true">فرم طراحی وبسایت</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="app-tab" data-bs-toggle="tab" data-bs-target="#app" type="button" role="tab" aria-controls="app" aria-selected="false">فرم طراحی اپلیکیشن</button>
+            </li>
+        </ul>
+        
+        <div class="tab-content" id="myTabContent">
+            <!-- فرم طراحی وبسایت -->
+            <div class="tab-pane fade show active" id="website" role="tabpanel" aria-labelledby="website-tab">
+                <div class="contract-form">
+                    <h2 class="form-header">فرم قرارداد طراحی وبسایت</h2>
+                    
+                    <div class="service-category">
+                        <h3 class="category-title">نوع وبسایت</h3>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="websiteType" id="personalSite" data-price="5000000">
+                            <label class="form-check-label" for="personalSite">
+                                وبسایت شخصی (یک صفحه‌ای)
+                                <span class="price-badge">5,000,000 تومان</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="websiteType" id="companySite" data-price="15000000">
+                            <label class="form-check-label" for="companySite">
+                                وبسایت شرکتی (5-10 صفحه)
+                                <span class="price-badge">15,000,000 تومان</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="websiteType" id="shopSite" data-price="25000000">
+                            <label class="form-check-label" for="shopSite">
+                                وبسایت فروشگاهی (حداقل 20 محصول)
+                                <span class="price-badge">25,000,000 تومان</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="websiteType" id="newsSite" data-price="20000000">
+                            <label class="form-check-label" for="newsSite">
+                                وبسایت خبری/مجله‌ای
+                                <span class="price-badge">20,000,000 تومان</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="websiteType" id="customSite" data-price="35000000">
+                            <label class="form-check-label" for="customSite">
+                                وبسایت اختصاصی (پروژه‌ای)
+                                <span class="price-badge">35,000,000 تومان</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="service-category">
+                        <h3 class="category-title">زبان برنامه نویسی</h3>
+                        <div class="form-check">
+                            <input class="form-check-input lang-checkbox" type="radio" name="websiteLang" id="reactSite" data-price="10000000" checked>
+                            <label class="form-check-label" for="reactSite">
+                                React.js (فرانت‌اند)
+                                <span class="price-badge">10,000,000 تومان</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input lang-checkbox" type="radio" name="websiteLang" id="vueSite" data-price="9000000">
+                            <label class="form-check-label" for="vueSite">
+                                Vue.js (فرانت‌اند)
+                                <span class="price-badge">9,000,000 تومان</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input lang-checkbox" type="radio" name="websiteLang" id="angularSite" data-price="11000000">
+                            <label class="form-check-label" for="angularSite">
+                                Angular (فرانت‌اند)
+                                <span class="price-badge">11,000,000 تومان</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input lang-checkbox" type="radio" name="websiteLang" id="wordpressSite" data-price="6000000">
+                            <label class="form-check-label" for="wordpressSite">
+                                WordPress
+                                <span class="price-badge">6,000,000 تومان</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="service-category">
+                        <h3 class="category-title">امکانات اضافی</h3>
+                        <div class="form-check">
+                            <input class="form-check-input feature-checkbox" type="checkbox" id="userSystem" data-price="5000000">
+                            <label class="form-check-label" for="userSystem">
+                                سیستم کاربری پیشرفته (ثبت نام/ورود/پنل کاربری)
+                                <span class="price-badge">5,000,000 تومان</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input feature-checkbox" type="checkbox" id="cms" data-price="8000000">
+                            <label class="form-check-label" for="cms">
+                                سیستم مدیریت محتوا (CMS) اختصاصی
+                                <span class="price-badge">8,000,000 تومان</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input feature-checkbox" type="checkbox" id="paymentGateway" data-price="5000000">
+                            <label class="form-check-label" for="paymentGateway">
+                                درگاه پرداخت آنلاین (یک درگاه)
+                                <span class="price-badge">5,000,000 تومان</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input feature-checkbox" type="checkbox" id="seo" data-price="4000000">
+                            <label class="form-check-label" for="seo">
+                                بهینه‌سازی حرفه‌ای برای موتورهای جستجو (SEO)
+                                <span class="price-badge">4,000,000 تومان</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input feature-checkbox" type="checkbox" id="multiLanguage" data-price="3000000">
+                            <label class="form-check-label" for="multiLanguage">
+                                چندزبانه (2 زبان)
+                                <span class="price-badge">3,000,000 تومان</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="delivery-option">
+                        <h3 class="category-title">زمان تحویل پروژه</h3>
+                        <div class="form-check">
+                            <input class="form-check-input delivery-radio" type="radio" name="deliveryTime" id="delivery1Month" data-price="0" data-days="30" checked>
+                            <label class="form-check-label" for="delivery1Month">
+                                تحویل عادی (30 روز)
+                                <span class="price-badge">هزینه اضافی: 0 تومان</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input delivery-radio" type="radio" name="deliveryTime" id="delivery3Weeks" data-price="3000000" data-days="21">
+                            <label class="form-check-label" for="delivery3Weeks">
+                                تحویل سریع (21 روز)
+                                <span class="price-badge">هزینه اضافی: 3,000,000 تومان</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input delivery-radio" type="radio" name="deliveryTime" id="delivery2Weeks" data-price="6000000" data-days="14">
+                            <label class="form-check-label" for="delivery2Weeks">
+                                تحویل فوری (14 روز)
+                                <span class="price-badge">هزینه اضافی: 6,000,000 تومان</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input delivery-radio" type="radio" name="deliveryTime" id="delivery1Week" data-price="10000000" data-days="7">
+                            <label class="form-check-label" for="delivery1Week">
+                                تحویل بسیار فوری (7 дня)
+                                <span class="price-badge">هزینه اضافی: 10,000,000 تومان</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="total-price">
+                        <p>قیمت نهایی: <span id="websiteTotalPrice">0</span> تومان</p>
+                        <p>زمان تحویل: <span id="deliveryDays">30</span> روز</p>
+                    </div>
+                    
+                    <div class="signature-area">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="clientName">نام کامل مشتری:</label>
+                                    <input type="text" class="form-control" id="clientName">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="clientPhone">شماره تماس:</label>
+                                    <input type="text" class="form-control" id="clientPhone">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="clientNationalId">شماره ملی:</label>
+                                    <input type="text" class="form-control" id="clientNationalId">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="clientAddress">آدرس:</label>
+                                    <input type="text" class="form-control" id="clientAddress">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="signature-box">
+                            <p>امضاء مشتری:</p>
+                            <div style="height: 80px; border-bottom: 1px solid #ccc; margin-bottom: 20px;"></div>
+                            
+                            <div class="company-info">
+                                <h5>مدیر گروه نرم افزاری: مهندس احسان آتش زبان</h5>
+                                <p>شماره تماس: 09375437106 - 09051826963</p>
+                                <p>شماره ملی: 1931006180</p>
+                                <p>آدرس: شهریار، خیابان طالقانی، برج ایساتیس، طبقه سوم واحد 5</p>
+                                <div style="height: 80px; border-bottom: 1px solid #ccc; margin-top: 20px;"></div>
+                                <p class="mt-2">امضاء مدیر</p>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary mt-4 w-100" onclick="generatePrintContent('website')">
+                            <i class="fas fa-print"></i> چاپ قرارداد
+                        </button>
+                    </div>
+                    
+                    <div class="disclaimer">
+                        <p>قیمت‌های فوق بر اساس استانداردهای بازار برنامه‌نویسی ایران در سال 140۴ محاسبه شده‌اند. قیمت نهایی ممکن است با توجه به پیچیدگی پروژه و نیازهای خاص مشتری تغییر کند.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- فرم طراحی اپلیکیشن -->
+            <div class="tab-pane fade" id="app" role="tabpanel" aria-labelledby="app-tab">
+                <div class="contract-form">
+                    <h2 class="form-header">فرم قرارداد طراحی اپلیکیشن موبایل</h2>
+                    
+                    <div class="service-category">
+                        <h3 class="category-title">نوع اپلیکیشن</h3>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="appType" id="iosApp" data-price="40000000">
+                            <label class="form-check-label" for="iosApp">
+                                اپلیکیشن iOS (نیتیو)
+                                <span class="price-badge">40,000,000 تومان</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="appType" id="androidApp" data-price="35000000">
+                            <label class="form-check-label" for="androidApp">
+                                اپلیکیشن Android (نیتیو)
+                                <span class="price-badge">35,000,000 تومان</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="appType" id="crossPlatformApp" data-price="45000000">
+                            <label class="form-check-label" for="crossPlatformApp">
+                                اپلیکیشن چندسکویی (React Native)
+                                <span class="price-badge">45,000,000 تومان</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="appType" id="flutterApp" data-price="42000000">
+                            <label class="form-check-label" for="flutterApp">
+                                اپلیکیشن Flutter
+                                <span class="price-badge">42,000,000 تومان</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="service-category">
+                        <h3 class="category-title">امکانات اصلی</h3>
+                        <div class="form-check">
+                            <input class="form-check-input app-feature-checkbox" type="checkbox" id="appUserSystem" data-price="8000000">
+                            <label class="form-check-label" for="appUserSystem">
+                                سیستم کاربری پیشرفته
+                                <span class="price-badge">8,000,000 تومان</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input app-feature-checkbox" type="checkbox" id="pushNotification" data-price="5000000">
+                            <label class="form-check-label" for="pushNotification">
+                                اطلاع رسانی (Push Notification)
+                                <span class="price-badge">5,000,000 تومان</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input app-feature-checkbox" type="checkbox" id="inAppPurchase" data-price="7000000">
+                            <label class="form-check-label" for="inAppPurchase">
+                                پرداخت درون برنامه‌ای
+                                <span class="price-badge">7,000,000 تومان</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input app-feature-checkbox" type="checkbox" id="socialMediaIntegration" data-price="4000000">
+                            <label class="form-check-label" for="socialMediaIntegration">
+                                یکپارچه سازی با شبکه های اجتماعی
+                                <span class="price-badge">4,000,000 تومان</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input app-feature-checkbox" type="checkbox" id="offlineMode" data-price="6000000">
+                            <label class="form-check-label" for="offlineMode">
+                                عملکرد آفلاین
+                                <span class="price-badge">6,000,000 تومان</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="delivery-option">
+                        <h3 class="category-title">زمان تحویل پروژه</h3>
+                        <div class="form-check">
+                            <input class="form-check-input app-delivery-radio" type="radio" name="appDeliveryTime" id="appDelivery1Month" data-price="0" data-days="30" checked>
+                            <label class="form-check-label" for="appDelivery1Month">
+                                تحویل عادی (30 روز)
+                                <span class="price-badge">هزینه اضافی: 0 تومان</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input app-delivery-radio" type="radio" name="appDeliveryTime" id="appDelivery3Weeks" data-price="4000000" data-days="21">
+                            <label class="form-check-label" for="appDelivery3Weeks">
+                                تحویل سریع (21 روز)
+                                <span class="price-badge">هزینه اضافی: 4,000,000 تومان</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input app-delivery-radio" type="radio" name="appDeliveryTime" id="appDelivery2Weeks" data-price="8000000" data-days="14">
+                            <label class="form-check-label" for="appDelivery2Weeks">
+                                تحویل فوری (14 روز)
+                                <span class="price-badge">هزینه اضافی: 8,000,000 تومان</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input app-delivery-radio" type="radio" name="appDeliveryTime" id="appDelivery1Week" data-price="15000000" data-days="7">
+                            <label class="form-check-label" for="appDelivery1Week">
+                                تحویل بسیار فوری (7 روز)
+                                <span class="price-badge">هزینه اضافی: 15,000,000 تومان</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="total-price">
+                        <p>قیمت نهایی: <span id="appTotalPrice">0</span> تومان</p>
+                        <p>زمان تحویل: <span id="appDeliveryDays">30</span> روز</p>
+                    </div>
+                    
+                    <div class="signature-area">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="appClientName">نام کامل مشتری:</label>
+                                    <input type="text" class="form-control" id="appClientName">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="appClientPhone">شماره تماس:</label>
+                                    <input type="text" class="form-control" id="appClientPhone">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="appClientNationalId">شماره ملی:</label>
+                                    <input type="text" class="form-control" id="appClientNationalId">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="appClientAddress">آدرس:</label>
+                                    <input type="text" class="form-control" id="appClientAddress">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="signature-box">
+                            <p>امضاء مشتری:</p>
+                            <div style="height: 80px; border-bottom: 1px solid #ccc; margin-bottom: 20px;"></div>
+                            
+                            <div class="company-info">
+                                <h5>مدیر گروه نرم افزاری: مهندس احسان آتش زبان</h5>
+                                <p>شماره تماس: 09375437106 - 09051826963</p>
+                                <p>شماره ملی: 1931006180</p>
+                                <p>آدرس: شهریار، خیابان طالقانی، برج ایساتیس، طبقه سوم واحد 5</p>
+                                <div style="height: 80px; border-bottom: 1px solid #ccc; margin-top: 20px;"></div>
+                                <p class="mt-2">امضاء مدیر</p>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary mt-4 w-100" onclick="generatePrintContent('app')">
+                            <i class="fas fa-print"></i> چاپ قرارداد
+                        </button>
+                    </div>
+                    
+                    <div class="disclaimer">
+                        <p>قیمت‌های فوق بر اساس استانداردهای بازار برنامه‌نویسی ایران در سال 140۴ محاسبه شده‌اند. قیمت نهایی ممکن است با توجه به پیچیدگی پروژه و نیازهای خاص مشتری تغییر کند.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="printSection" style="display: none;">
+        <!-- محتوای چاپ در اینجا توسط اسکریپت پر می‌شود -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // محاسبه قیمت برای وبسایت
+        const websiteRadios = document.querySelectorAll('input[name="websiteType"]');
+        const websiteCheckboxes = document.querySelectorAll('.feature-checkbox');
+        const websiteLangRadios = document.querySelectorAll('input[name="websiteLang"]');
+        const websiteDeliveryRadios = document.querySelectorAll('input[name="deliveryTime"]');
+        const websiteTotalElement = document.getElementById('websiteTotalPrice');
+        const deliveryDaysElement = document.getElementById('deliveryDays');
+        
+        // محاسبه قیمت برای اپلیکیشن
+        const appRadios = document.querySelectorAll('input[name="appType"]');
+        const appCheckboxes = document.querySelectorAll('.app-feature-checkbox');
+        const appDeliveryRadios = document.querySelectorAll('input[name="appDeliveryTime"]');
+        const appTotalElement = document.getElementById('appTotalPrice');
+        const appDeliveryDaysElement = document.getElementById('appDeliveryDays');
+        
+        // تابع برای محاسبه قیمت نهایی
+        function calculateTotal(radios, checkboxes, langRadios, deliveryRadios, totalElement, deliveryDaysElement) {
+            let total = 0;
+            
+            // جمع هزینه نوع انتخاب شده
+            radios.forEach(radio => {
+                if (radio.checked) {
+                    total += parseInt(radio.getAttribute('data-price'));
+                }
+            });
+            
+            // جمع هزینه زبان برنامه نویسی
+            if (langRadios) {
+                langRadios.forEach(radio => {
+                    if (radio.checked) {
+                        total += parseInt(radio.getAttribute('data-price'));
+                    }
+                });
+            }
+            
+            // جمع هزینه امکانات اضافی
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    total += parseInt(checkbox.getAttribute('data-price'));
+                }
+            });
+            
+            // جمع هزینه تحویل سریع
+            let deliveryDays = 30;
+            deliveryRadios.forEach(radio => {
+                if (radio.checked) {
+                    total += parseInt(radio.getAttribute('data-price'));
+                    deliveryDays = parseInt(radio.getAttribute('data-days'));
+                }
+            });
+            
+            // نمایش قیمت با فرمت مناسب
+            totalElement.textContent = total.toLocaleString('fa-IR');
+            if (deliveryDaysElement) {
+                deliveryDaysElement.textContent = deliveryDays;
+            }
+            
+            return { total, deliveryDays };
+        }
+        
+        // افزودن event listener به تمامی radio buttons و checkboxes در بخش وبسایت
+        websiteRadios.forEach(radio => {
+            radio.addEventListener('change', () => calculateTotal(websiteRadios, websiteCheckboxes, websiteLangRadios, websiteDeliveryRadios, websiteTotalElement, deliveryDaysElement));
+        });
+        
+        websiteCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => calculateTotal(websiteRadios, websiteCheckboxes, websiteLangRadios, websiteDeliveryRadios, websiteTotalElement, deliveryDaysElement));
+        });
+        
+        websiteLangRadios.forEach(radio => {
+            radio.addEventListener('change', () => calculateTotal(websiteRadios, websiteCheckboxes, websiteLangRadios, websiteDeliveryRadios, websiteTotalElement, deliveryDaysElement));
+        });
+        
+        websiteDeliveryRadios.forEach(radio => {
+            radio.addEventListener('change', () => calculateTotal(websiteRadios, websiteCheckboxes, websiteLangRadios, websiteDeliveryRadios, websiteTotalElement, deliveryDaysElement));
+        });
+        
+        // افزودن event listener به تمامی radio buttons و checkboxes در بخش اپلیکیشن
+        appRadios.forEach(radio => {
+            radio.addEventListener('change', () => calculateTotal(appRadios, appCheckboxes, null, appDeliveryRadios, appTotalElement, appDeliveryDaysElement));
+        });
+        
+        appCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => calculateTotal(appRadios, appCheckboxes, null, appDeliveryRadios, appTotalElement, appDeliveryDaysElement));
+        });
+        
+        appDeliveryRadios.forEach(radio => {
+            radio.addEventListener('change', () => calculateTotal(appRadios, appCheckboxes, null, appDeliveryRadios, appTotalElement, appDeliveryDaysElement));
+        });
+        
+        // تابع برای تولید محتوای چاپ
+        function generatePrintContent(type) {
+            const printSection = document.getElementById('printSection');
+            printSection.innerHTML = '';
+            
+            // ایجاد عنوان چاپ
+            const title = document.createElement('h1');
+            title.className = 'print-title';
+            title.textContent = 'قرارداد طراحی سرزمین کدها';
+            printSection.appendChild(title);
+            
+            // ایجاد جدول برای اطلاعات
+            const table = document.createElement('table');
+            table.className = 'table table-bordered';
+            table.style.width = '100%';
+            table.style.marginBottom = '20px';
+            
+            // اضافه کردن ردیف‌های اطلاعات
+            const addRow = (label, value) => {
+                const row = document.createElement('tr');
+                const labelCell = document.createElement('th');
+                labelCell.style.width = '30%';
+                labelCell.textContent = label;
+                const valueCell = document.createElement('td');
+                valueCell.textContent = value;
+                row.appendChild(labelCell);
+                row.appendChild(valueCell);
+                table.appendChild(row);
+            };
+            
+            if (type === 'website') {
+                const { total, deliveryDays } = calculateTotal(websiteRadios, websiteCheckboxes, websiteLangRadios, websiteDeliveryRadios, websiteTotalElement, deliveryDaysElement);
+                
+                addRow('نوع وبسایت', document.querySelector('input[name="websiteType"]:checked').nextElementSibling.textContent.split('تومان')[0].trim());
+                addRow('زبان برنامه نویسی', document.querySelector('input[name="websiteLang"]:checked').nextElementSibling.textContent.split('تومان')[0].trim());
+                
+                // اضافه کردن امکانات انتخاب شده
+                const selectedFeatures = [];
+                websiteCheckboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        selectedFeatures.push(checkbox.nextElementSibling.textContent.split('تومان')[0].trim());
+                    }
+                });
+                
+                addRow('امکانات اضافی', selectedFeatures.join('، ') || 'هیچکدام');
+                addRow('زمان تحویل', `${deliveryDays} روز`);
+                addRow('قیمت نهایی', `${total.toLocaleString('fa-IR')} تومان`);
+                
+                // اطلاعات مشتری
+                addRow('نام کامل مشتری', document.getElementById('clientName').value || '---');
+                addRow('شماره تماس', document.getElementById('clientPhone').value || '---');
+                addRow('شماره ملی', document.getElementById('clientNationalId').value || '---');
+                addRow('آدرس', document.getElementById('clientAddress').value || '---');
+            } else {
+                const { total, deliveryDays } = calculateTotal(appRadios, appCheckboxes, null, appDeliveryRadios, appTotalElement, appDeliveryDaysElement);
+                
+                addRow('نوع اپلیکیشن', document.querySelector('input[name="appType"]:checked').nextElementSibling.textContent.split('تومان')[0].trim());
+                
+                // اضافه کردن امکانات انتخاب شده
+                const selectedFeatures = [];
+                appCheckboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        selectedFeatures.push(checkbox.nextElementSibling.textContent.split('تومان')[0].trim());
+                    }
+                });
+                
+                addRow('امکانات', selectedFeatures.join('، ') || 'هیچکدام');
+                addRow('زمان تحویل', `${deliveryDays} روز`);
+                addRow('قیمت نهایی', `${total.toLocaleString('fa-IR')} تومان`);
+                
+                // اطلاعات مشتری
+                addRow('نام کامل مشتری', document.getElementById('appClientName').value || '---');
+                addRow('شماره تماس', document.getElementById('appClientPhone').value || '---');
+                addRow('شماره ملی', document.getElementById('appClientNationalId').value || '---');
+                addRow('آدرس', document.getElementById('appClientAddress').value || '---');
+            }
+            
+            // اطلاعات شرکت
+            addRow('مدیر گروه نرم افزاری', 'مهندس احسان آتش زبان');
+            addRow('شماره تماس مدیر', '09375437106 - 09051826963');
+            addRow('شماره ملی مدیر', '1931006180');
+            addRow('آدرس شرکت', 'شهریار، خیابان طالقانی، برج ایساتیس، طبقه سوم واحد 5');
+            
+            printSection.appendChild(table);
+            
+            // اضافه کردن بخش امضاء
+            const signatureDiv = document.createElement('div');
+            signatureDiv.style.marginTop = '50px';
+            signatureDiv.innerHTML = `
+                <div style="display: flex; justify-content: space-between;">
+                    <div style="width: 45%;">
+                        <p>امضاء مشتری:</p>
+                        <div style="height: 80px; border-bottom: 1px solid #ccc;"></div>
+                    </div>
+                    <div style="width: 45%;">
+                        <p>امضاء مدیر:</p>
+                        <div style="height: 80px; border-bottom: 1px solid #ccc;"></div>
+                    </div>
+                </div>
+                <p style="margin-top: 20px; text-align: center; font-size: 0.9rem;">
+                    تاریخ: ${new Date().toLocaleDateString('fa-IR')}
+                </p>
+            `;
+            
+            printSection.appendChild(signatureDiv);
+            
+            // چاپ سند
+            window.print();
+        }
+        
+        // مقداردهی اولیه
+        document.addEventListener('DOMContentLoaded', function() {
+            calculateTotal(websiteRadios, websiteCheckboxes, websiteLangRadios, websiteDeliveryRadios, websiteTotalElement, deliveryDaysElement);
+            calculateTotal(appRadios, appCheckboxes, null, appDeliveryRadios, appTotalElement, appDeliveryDaysElement);
+        });
+    </script>
+</body>
+</html>
