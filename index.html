@@ -181,27 +181,64 @@
         }
         
         @media print {
+            body, html {
+                width: 100%;
+                height: auto;
+                margin: 0;
+                padding: 0;
+                visibility: visible;
+            }
+            
             body * {
                 visibility: hidden;
             }
+            
             #printSection, #printSection * {
                 visibility: visible;
             }
+            
             #printSection {
+                display: block !important;
                 position: absolute;
                 left: 0;
                 top: 0;
                 width: 100%;
+                padding: 20px;
+                background: white;
             }
+            
             .no-print {
                 display: none !important;
             }
+            
             .print-title {
                 font-size: 24px;
                 text-align: center;
                 margin-bottom: 30px;
                 color: var(--primary-color);
                 font-weight: bold;
+            }
+            
+            .print-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+            }
+            
+            .print-table th, .print-table td {
+                border: 1px solid #ddd;
+                padding: 10px;
+                text-align: right;
+            }
+            
+            .print-table th {
+                background-color: #f5f5f5;
+            }
+            
+            .signature-area-print {
+                margin-top: 50px;
+                padding-top: 20px;
+                border-top: 1px dashed #ccc;
             }
         }
         
@@ -211,6 +248,10 @@
             border-radius: 10px;
             margin-top: 30px;
             text-align: center;
+        }
+        
+        #printSection {
+            display: none;
         }
     </style>
 </head>
@@ -448,7 +489,7 @@
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="appType" id="iosApp" data-price="40000000">
                             <label class="form-check-label" for="iosApp">
-                                اپلیکیشن iOS (نیتیو)
+                                اпلیکیشن iOS (نیتیو)
                                 <span class="price-badge">40,000,000 تومان</span>
                             </label>
                         </div>
@@ -602,7 +643,7 @@
         </div>
     </div>
 
-    <div id="printSection" style="display: none;">
+    <div id="printSection">
         <!-- محتوای چاپ در اینجا توسط اسکریپت پر می‌شود -->
     </div>
 
@@ -706,20 +747,17 @@
             // ایجاد عنوان چاپ
             const title = document.createElement('h1');
             title.className = 'print-title';
-            title.textContent = 'قرارداد طراحی سرزمین کدها';
+            title.textContent = type === 'website' ? 'قرارداد طراحی وبسایت - سرزمین کدها' : 'قرارداد طراحی اپلیکیشن - سرزمین کدها';
             printSection.appendChild(title);
             
             // ایجاد جدول برای اطلاعات
             const table = document.createElement('table');
-            table.className = 'table table-bordered';
-            table.style.width = '100%';
-            table.style.marginBottom = '20px';
+            table.className = 'print-table';
             
             // اضافه کردن ردیف‌های اطلاعات
             const addRow = (label, value) => {
                 const row = document.createElement('tr');
                 const labelCell = document.createElement('th');
-                labelCell.style.width = '30%';
                 labelCell.textContent = label;
                 const valueCell = document.createElement('td');
                 valueCell.textContent = value;
@@ -785,9 +823,9 @@
             
             // اضافه کردن بخش امضاء
             const signatureDiv = document.createElement('div');
-            signatureDiv.style.marginTop = '50px';
+            signatureDiv.className = 'signature-area-print';
             signatureDiv.innerHTML = `
-                <div style="display: flex; justify-content: space-between;">
+                <div style="display: flex; justify-content: space-between; margin-top: 50px;">
                     <div style="width: 45%;">
                         <p>امضاء مشتری:</p>
                         <div style="height: 80px; border-bottom: 1px solid #ccc;"></div>
