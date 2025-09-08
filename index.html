@@ -23,15 +23,15 @@
         
         .logo-container {
             text-align: center;
-            margin-bottom: 30px;
-            padding: 20px;
+            margin-bottom: 20px;
+            padding: 15px;
             background: linear-gradient(135deg, var(--primary-color), #3a0085);
             border-radius: 10px;
             color: white;
         }
         
         .logo {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: bold;
             margin-bottom: 10px;
         }
@@ -40,42 +40,44 @@
             background-color: white;
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            margin-bottom: 30px;
+            padding: 20px;
+            margin-bottom: 20px;
         }
         
         .form-header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             color: var(--primary-color);
             border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 15px;
+            padding-bottom: 10px;
+            font-size: 1.5rem;
         }
         
         .service-category {
             background-color: var(--secondary-color);
             border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 25px;
+            padding: 15px;
+            margin-bottom: 20px;
             border-right: 4px solid var(--primary-color);
         }
         
         .category-title {
             color: var(--primary-color);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             padding-bottom: 10px;
             border-bottom: 1px solid #ddd;
+            font-size: 1.2rem;
         }
         
         .form-check {
-            margin-bottom: 15px;
-            padding-right: 35px;
+            margin-bottom: 12px;
+            padding-right: 30px;
         }
         
         .form-check-input {
-            width: 20px;
-            height: 20px;
-            margin-left: 10px;
+            width: 18px;
+            height: 18px;
+            margin-left: 8px;
         }
         
         .form-check-input:checked {
@@ -85,35 +87,39 @@
         
         .form-check-label {
             font-weight: 500;
+            font-size: 0.95rem;
         }
         
         .price-badge {
             background-color: var(--primary-color);
             color: white;
-            padding: 5px 10px;
+            padding: 4px 8px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             float: left;
+            margin-top: 2px;
         }
         
         .total-price {
             background-color: var(--primary-color);
             color: white;
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
             text-align: center;
-            margin-top: 30px;
-            font-size: 1.5rem;
+            margin-top: 25px;
+            font-size: 1.3rem;
             font-weight: bold;
         }
         
         .form-tabs {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
         
         .nav-link {
             color: var(--primary-color);
             font-weight: bold;
+            font-size: 0.9rem;
+            padding: 8px 12px;
         }
         
         .nav-link.active {
@@ -123,56 +129,47 @@
         }
         
         .signature-area {
-            margin-top: 40px;
-            padding-top: 20px;
+            margin-top: 30px;
+            padding-top: 15px;
             border-top: 1px dashed #ccc;
         }
         
         .disclaimer {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #666;
-            margin-top: 20px;
+            margin-top: 15px;
             text-align: center;
         }
         
         .delivery-option {
             background-color: #fff6f9;
-            padding: 15px;
+            padding: 12px;
             border-radius: 10px;
             border: 1px solid var(--accent-color);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         .signature-box {
             border: 2px dashed var(--primary-color);
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
-            margin-top: 20px;
+            margin-top: 15px;
             background-color: var(--secondary-color);
         }
         
         .company-info {
             background-color: var(--secondary-color);
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
-            margin-top: 30px;
-        }
-        
-        @media (max-width: 768px) {
-            .contract-form {
-                padding: 20px;
-            }
-            
-            .price-badge {
-                float: none;
-                display: inline-block;
-                margin-top: 5px;
-            }
+            margin-top: 20px;
+            font-size: 0.9rem;
         }
         
         .btn-primary {
             background-color: var(--primary-color);
             border-color: var(--primary-color);
+            font-size: 1rem;
+            padding: 10px;
         }
         
         .btn-primary:hover {
@@ -180,6 +177,104 @@
             border-color: #4500a3;
         }
         
+        /* بهبودهای واکنش‌گرایی برای موبایل */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .logo {
+                font-size: 1.7rem;
+            }
+            
+            .contract-form {
+                padding: 15px;
+            }
+            
+            .form-header {
+                font-size: 1.3rem;
+            }
+            
+            .category-title {
+                font-size: 1.1rem;
+            }
+            
+            .form-check {
+                padding-right: 25px;
+            }
+            
+            .price-badge {
+                float: none;
+                display: inline-block;
+                margin-top: 5px;
+                margin-left: 5px;
+            }
+            
+            .total-price {
+                font-size: 1.1rem;
+                padding: 12px;
+            }
+            
+            .nav-pills .nav-item {
+                margin-bottom: 5px;
+            }
+            
+            .form-tabs .nav-link {
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+            
+            .company-info {
+                padding: 10px;
+                font-size: 0.8rem;
+            }
+            
+            .signature-box {
+                padding: 10px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .form-header {
+                font-size: 1.2rem;
+            }
+            
+            .category-title {
+                font-size: 1rem;
+            }
+            
+            .form-check-label {
+                font-size: 0.9rem;
+            }
+            
+            .total-price {
+                font-size: 1rem;
+            }
+            
+            .btn-primary {
+                font-size: 0.9rem;
+                padding: 8px;
+            }
+            
+            .nav-pills {
+                flex-direction: column;
+            }
+            
+            .nav-pills .nav-item {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+            
+            .nav-pills .nav-link {
+                text-align: center;
+            }
+        }
+        
+        /* استایل‌های چاپ */
         @media print {
             body, html {
                 width: 100%;
@@ -242,30 +337,16 @@
             }
         }
         
-        .github-info {
-            background-color: var(--secondary-color);
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 30px;
-            text-align: center;
-        }
-        
         #printSection {
             display: none;
         }
     </style>
 </head>
 <body>
-    <div class="container my-5 no-print">
+    <div class="container my-4 my-md-5 no-print">
         <div class="logo-container">
             <div class="logo"><i class="fas fa-code"></i> سرزمین کدها</div>
             <p>ارائه دهنده خدمات تخصصی طراحی وبسایت و اپلیکیشن</p>
-        </div>
-        
-        <div class="github-info">
-            <h4>این پروژه برای GitHub Pages طراحی شده است</h4>
-            <p>GitHub Pages یک سرویس میزبانی رایگان و دائمی است که منقضی نمی‌شود</p>
-            <p>برای استفاده، کد این صفحه را در یک فایل index.html ذخیره کرده و در ریپازیتوری GitHub خود آپلود کنید</p>
         </div>
         
         <ul class="nav nav-pills form-tabs" id="myTab" role="tablist">
@@ -489,7 +570,7 @@
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="appType" id="iosApp" data-price="40000000">
                             <label class="form-check-label" for="iosApp">
-                                اпلیکیشن iOS (نیتیو)
+                                اپلیکیشن iOS (نیتیو)
                                 <span class="price-badge">40,000,000 تومان</span>
                             </label>
                         </div>
